@@ -1,0 +1,360 @@
+@font-face {
+  font-family: 'Catchy Mager';
+  src: url('./fonts/catchy-mager.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'TT Hoves Regular';
+  src: url('./fonts/TT Hoves Pro Trial Expanded Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'TT Hoves Bold';
+  src: url('./fonts/TT Hoves Pro Trial Bold.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'TT Hoves Light';
+  src: url('./fonts/TT Hoves Pro Trial Expanded Light.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'TT Hoves Hairline';
+  src: url('./fonts/TT Hoves Pro Trial Expanded Hairline.ttf') format('truetype');
+  font-weight: normal;
+}
+
+:root {
+    --cor0: #1a3950; /* logo */
+    --cor1: #1A3949; /* menu */
+    --cor2: #fff; /* fundo */
+    --cor3: #d9d9d9; /* texto claro */
+    --cor4: #faf9f8; /* página depoimentos chacareiros */
+    --cor5: #000000; /* texto preto */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Catchy Mager', cursive;
+    background-color: var(--cor4);
+    color: var(--cor5);
+}
+
+h2 {
+    text-align: center;
+    padding-top: 2%;
+}
+
+h3 {
+    text-align: center;
+}
+#logo {
+    display: flex; /* Permite que a logo seja centralizada verticalmente */
+}
+
+.navbar-logo {
+    height: 40px; /* Altura da logo */
+    width: auto; /* Mantém a proporção da logo */
+}
+
+
+/* Estilo da Navbar */
+.navbar {
+    background-color: var(--cor1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.navbar a {
+    color: var(--cor2);
+    text-decoration: none;
+    margin-left: 30px;
+    font-family: 'TT Hoves Regular';
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--cor3);
+    transform: translateY(-2px);
+}
+.navbar a.active {
+    border-bottom: 2px solid var(--cor3);
+    padding-bottom: 5px;
+}
+.hamburger {
+    display: none; /* Oculto por padrão */
+    font-size: 24px;
+    color: var(--cor2);
+    cursor: pointer;
+}
+
+.menu {
+    display: flex; /* Exibe os itens do menu em linha */
+}
+/* Estilo do Dropdown */
+.dropdown {
+    position:relative;
+    display: inline-block;
+
+}
+
+.dropbtn {
+    background-color: var(--cor1);
+    color: var(--cor2);
+    padding: 7,7px;
+    border: none;
+    cursor: pointer;
+    font-family: 'TT Hoves Regular';
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 16px;
+    background-color: var(--cor2);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 140px;
+    z-index: 1;
+}
+#drop2-content{
+    left: 50px;
+}
+.dropdown-content a {
+    color: var(--cor5);
+    padding: 10px 0;
+    font-size: 16px;
+    display: flex;
+    font-family: 'TT Hoves Regular';
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-family: 'TT Hoves Regular';
+}
+
+#descricao {
+    width: 100%;
+    height: 100px;
+    font-size: 12px;
+    padding: 10px;
+    resize: vertical;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'TT Hoves Regular';
+}
+
+button {
+    background-color: var(--cor0);
+    color: var(--cor2);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'TT Hoves Regular';
+}
+
+button:hover {
+    background-color: var(--cor3);
+}
+
+#proprietarioForm, #chacaraForm, #usuariosTable, #chacarasTable {
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto;
+    background: var(--cor2);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#usuariosTable th, #chacarasTable th, #usuariosTable td, #chacarasTable td {
+    border-radius: 7px;
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid var(--cor3);
+}
+
+#usuariosTable th, #chacarasTable th {
+    background-color: var(--cor1);
+    color: var(--cor2);
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+    display: none;
+}
+
+.form-check {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Estilos do Footer */
+.footer {
+    background-color: var(--cor0); /* Cor de fundo do footer */
+    color: var(--cor2); /* Cor do texto */
+    padding: 20px 0; /* Espaçamento vertical */
+    font-family: 'TT Hoves Regular';
+}
+
+.footer-container {
+    display: flex; /* Usar flexbox para layout responsivo */
+    justify-content: space-around; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha se necessário */
+    max-width: 1200px; /* Largura máxima do footer */
+    margin: 0 auto; /* Centraliza o footer na página */
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+.footer-item {
+    flex: 1; /* Cada item ocupará espaço igual */
+    min-width: 200px; /* Largura mínima para cada item */
+    margin: 10px; /* Margem entre os itens */
+}
+
+.footer-item h4 {
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+.footer-item ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove padding padrão */
+}
+
+.footer-item ul li {
+    margin: 5px 0; /* Espaçamento entre os itens da lista */
+}
+
+.footer-item a {
+    color: var(--cor2); /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.footer-item a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.footer-bottom {
+    text-align: center; /* Centraliza o texto na parte inferior */
+    margin-top: 20px; /* Espaçamento acima do texto inferior */
+    font-size: 14px; /* Tamanho da fonte */
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Mantém a direção horizontal */
+        flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
+        justify-content: space-between; /* Distribui os itens */
+        padding: 10px; /* Ajusta o padding */
+    }
+
+    .navbar a {
+        flex: 0 0 45%; /* Define a largura dos itens para 45% */
+        margin-left: 0; /* Remove o espaçamento lateral */
+        margin-bottom: 10px; /* Adiciona espaçamento entre as linhas */
+        text-align: center; /* Centraliza o texto */
+        font-size: 16px; /* Reduz o tamanho da fonte */
+    }
+
+    .dropdown-content {
+        top: 100%; /* Mantém o alinhamento com o botão */
+        left: 14%; /* Mantém alinhado ao meio */
+        transform: translateX(-50%); /* Centraliza o dropdown em relação ao botão */
+        width: 100%; /* Ajusta para ocupar toda a largura */
+    }
+    #dp1-content {
+        top: 100%; /* Mantém o alinhamento com o botão */
+        left: 10%; /* Mantém alinhado ao meio */
+        transform: translateX(-50%); /* Centraliza o dropdown em relação ao botão */
+        width: 100%; /* Ajusta para ocupar toda a largura */
+    }
+    .dropdown{
+        left: 36%;
+        padding: 4px;
+    }
+    #dp1{
+        left: 40%;
+    }
+    .dropdown-content a {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        padding: 10px; /* Ajusta o padding */
+        justify-content: center; /* Garante que o texto fique centralizado */
+    }
+
+    #descricao {
+        height: 80px; /* Reduz a altura do textarea */
+    }
+
+    input, select {
+        padding: 8px; /* Reduz o espaçamento */
+    }
+
+    button {
+        padding: 8px 12px; /* Reduz o espaçamento */
+    }
+    .hamburger {
+        display: block; /* Exibe o ícone de hamburguer em dispositivos móveis */
+    }
+
+    .menu {
+        display: none; /* Oculta o menu por padrão */
+        flex-direction: column; /* Alinha os itens em coluna */
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Coloca o menu abaixo da navbar */
+        left: 0;
+        background-color: var(--cor1);
+        z-index: 1; /* Para garantir que o menu fique acima de outros elementos */
+    }
+
+    .menu.active {
+        display: flex; /* Exibe o menu quando ativo */
+        border-radius: 10px;
+        margin-top: 2px;
+    }
+
+    .menu a {
+        margin: 10px 7px; /* Adiciona espaçamento entre os itens do menu */
+        text-align: center; /* Centraliza o texto */
+    }
+    .footer-container {
+        flex-direction: column; /* Alinha os itens na coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .footer-item {
+        min-width: 100%; /* Cada item ocupa toda a largura em telas pequenas */
+    }
+}
